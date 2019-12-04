@@ -53,7 +53,7 @@
 
             
         }
-        $sql = "SELECT aluno.alu_nome, aluno.alu_ra, aluno.alu_celular, aluno.alu_email FROM tutor, aluno WHERE tutor.tutor_ra=aluno.alu_ra AND alu_nome like ?;";
+        $sql = "SELECT aluno.alu_nome, aluno.alu_ra, aluno.alu_celular, aluno.alu_email FROM tutor, aluno WHERE tutor.tutor_ra=aluno.alu_ra AND (alu_nome like ? OR tutor.tutor_ra=?);";
         //Criação de uma declaração preparada
         $stmt = mysqli_stmt_init($conn);
 
@@ -63,7 +63,7 @@
           }
               else {
                 //Fixar parâmetro ao placeholder
-                mysqli_stmt_bind_param($stmt, "s", $data);
+                mysqli_stmt_bind_param($stmt, "si", $data, $data);
                 //Rodar parâmetros dentro do BD
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
@@ -214,17 +214,17 @@
        break;
     case "tutor":
           //Criação de template para busca de nome
-            $sql = "SELECT aluno.alu_nome, aluno.alu_ra, aluno.alu_celular, aluno.alu_email FROM tutor, aluno WHERE tutor.tutor_ra=aluno.alu_ra AND alu_nome like ?;";
-            //Criação de uma declaração preparada
-            $stmt = mysqli_stmt_init($conn);
-
-            //Preparar a declaração
-            if(!mysqli_stmt_prepare($stmt, $sql)){
+          $sql = "SELECT aluno.alu_nome, aluno.alu_ra, aluno.alu_celular, aluno.alu_email FROM tutor, aluno WHERE tutor.tutor_ra=aluno.alu_ra AND (alu_nome like ? OR tutor.tutor_ra=?);";
+          //Criação de uma declaração preparada
+          $stmt = mysqli_stmt_init($conn);
+  
+              //Preparar a declaração
+              if(!mysqli_stmt_prepare($stmt, $sql)){
                 echo "Declaração SQL falhou";
             }
-            else {
-                //Fixar parâmetro ao placeholder
-                mysqli_stmt_bind_param($stmt, "s", $data);
+                else {
+                  //Fixar parâmetro ao placeholder
+                  mysqli_stmt_bind_param($stmt, "si", $data, $data);
                 //Rodar parâmetros dentro do BD
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);

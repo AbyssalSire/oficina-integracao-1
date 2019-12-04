@@ -26,3 +26,20 @@ values (1640615), (2014625), (1985452), (1954823);
 ## inserção dia da semana
 INSERT INTO `dia_da_semana` (`dia_semana`) 
 VALUES ('Segunda-feira'),('Terça-feira'),('Quarta-feira'),('Quinta-feira'),('Sexta-feira'),('Sabado'), ('Domingo');
+
+## inserção oferta de aula 
+INSERT INTO `oferta_de_aula` (`ofertaul_id`, `ofertaul_nome`, `ofertaul_descricao`, `tutor_ra`, `mate_id`) 
+VALUES (NULL, 'Oferta 1', 'Discrição 1', '1640615', '1'), (NULL, 'Oferta 2', 'Discrição 2', '1954823', '2'), 
+(NULL, 'Oferta 3', 'Discrição 3', '1985452', '3'), (NULL, 'Oferta 4', 'Discrição 4', '2014625', '4'), 
+(NULL, 'Oferta 5', 'Discrição 5', '2014625', '1'), (NULL, 'Oferta 6', 'Discrição 6', '1640615', '1');
+
+##inserção horário oferta
+INSERT INTO `horario_oferta` (`hroferta_inicio`, `hroferta_fim`, `hroferta_local`, `dia_da_semana_dia_semana`, `oferta_de_aula_ofertaul_id`)
+VALUES ('12:30:00', '13:30:30', 'Sala 1', 'Sabado', '1'),('13:30:00', '14:30:30', 'Sala 2', 'Segunda-feira', '2'),
+('15:30:00', '16:30:30', 'Sala 3', 'Terça-feira', '3'),('12:30:00', '13:30:30', 'Sala 1', 'Quinta-feira', '4'),
+('17:30:00', '19:30:30', 'Sala 5', 'Sabado', '5'),('20:30:00', '21:30:30', 'Sala 5', 'Sexta-feira', '6');
+
+#inserção aula
+INSERT INTO `aula` (`ofertaul_id`, `alu_ra`) VALUES ('6', '2154862'),('2', '1785469');
+
+

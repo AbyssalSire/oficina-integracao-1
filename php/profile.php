@@ -167,7 +167,7 @@
     
     <!-- inicio da div de aula do aluno -->
     <?PHP 
-    $sql = "SELECT aluno.alu_nome, oferta_de_aula.ofertaul_nome, horario_oferta.hroferta_inicio, horario_oferta.hroferta_fim, horario_oferta.hroferta_local, horario_oferta.dia_da_semana_dia_semana, materia.mate_nome
+    $sql = "SELECT aluno.alu_nome, oferta_de_aula.ofertaul_nome, horario_oferta.hroferta_inicio, horario_oferta.hroferta_fim, horario_oferta.hroferta_local, horario_oferta.dia_da_semana_dia_semana, materia.mate_nome, tutor.tutor_ra
     FROM aluno, tutor, oferta_de_aula, horario_oferta, aula, materia
     WHERE aula.alu_ra=aluno.alu_ra AND horario_oferta.oferta_de_aula_ofertaul_id=oferta_de_aula.ofertaul_id AND oferta_de_aula.ofertaul_id=aula.ofertaul_id AND tutor.tutor_ra=oferta_de_aula.tutor_ra 
     AND materia.mate_id=oferta_de_aula.mate_id AND aluno.alu_ra=?";
@@ -205,6 +205,7 @@
                         } else {
                           while ($row = mysqli_fetch_assoc($result)){
                           $ofertaul_nome = $row['ofertaul_nome'];
+                          $tutor_ra = $row['tutor_ra'];
                           $hroferta_inicio = $row['hroferta_inicio'];
                           $hroferta_fim = $row['hroferta_fim'];
                           $hroferta_local = $row['hroferta_local'];
@@ -221,7 +222,7 @@
                           </div>
                           <div class="card-footer">
                             <small class="text-muted">Tutor: </small>
-                            <small class="text-muted">Roberto </small>
+                            <small class="text-muted">'; echo $tutor_ra ;echo ' </small>
                           </div>
                         </div>';
                         }}
