@@ -1,5 +1,11 @@
 <?php
-   session_start();
+   if(session_id() == '' || !isset($_SESSION)) {
+    // session isn't started
+    session_start();
+    if($_SESSION["userRA"]==NULL){
+      $_SESSION["userRA"] = 1111111;
+    }
+}
 ?>
 
 <!doctype html>
@@ -82,7 +88,7 @@
       <div class="col-auto ml-auto">
         <div class="dropdown ">
           <?php
-              if(isset($_SESSION["userRA"])) {echo '
+              if(isset($_SESSION["userRA"]) && $_SESSION["userRA"]!=1111111) {echo '
                 <button class="btn bg-amarelo dropdown-toggle" type="button" id="dropdown-login" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Conta
                 </button>
