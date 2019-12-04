@@ -1,0 +1,70 @@
+/* color */
+.bg-amarelo {
+  background-color: #FEDC3D;
+}
+
+.bg-verde {
+  background-color: #4CAF50;
+}
+
+.bg-azul-fraco {
+  background-color: #00BCD4;
+}
+
+.bg-azul-marinho {
+  background-color: #01ABAA;
+}
+
+.bg-rosa-fraco {
+  background-color: #FEA680;
+}
+
+.bg-azul-logo {
+  background-color: #2EB1FF;
+}
+
+.bg-vermelho-fraco {
+  background-color: #f44336;
+}
+
+.bg-cinza-azul {
+  background-color: #607D8B;
+}
+
+.bg-laranja {
+  background-color: #FF9800;
+}
+
+.bg-laranja-vermelho {
+  background-color: #FF5722;
+}
+
+.altura-header {
+  height: 150px;
+}
+
+/* The alert message box */
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
