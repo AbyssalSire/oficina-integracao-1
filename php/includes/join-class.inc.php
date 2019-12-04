@@ -17,7 +17,7 @@
             mysqli_stmt_bind_param($stmt, "ii", $ofertaul_id, $alu_ra);
             mysqli_stmt_execute($stmt);
         }
-        //header("Location: ../profile.php?joinsuccess");
+        header("Location: ../profile.php?joinsuccess");
         exit();
 
 
