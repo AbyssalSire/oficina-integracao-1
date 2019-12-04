@@ -9,6 +9,7 @@
             echo $buffer;
             require 'includes/dbh.inc.php';
             $alu_ra =  $_SESSION["userRA"];
+            var_dump($alu_ra);
 ?>
 
 
