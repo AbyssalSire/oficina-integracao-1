@@ -4,7 +4,7 @@
 
 Criação de um ambiente para facilitar o encontre entre alunos que desejam ensinar e alunos que querem aprender algum tópico específico sobre a faculdade.
 
-Lara 1914553
+<strike>Lara 1914553</strike>(trancou o curso)
 
 Lucas Malheiros 1835793
 
