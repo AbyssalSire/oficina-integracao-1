@@ -83,16 +83,16 @@
         echo $Message;
         }
 
-        if(!isset($_SESSION["userRA"])){
-            echo "<p>Você não está logado</p>";
+        if(isset($_SESSION["userRA"]) && $_SESSION["userRA"]!=1111111){
+          echo "<p>Você está logado</p>
+          <div class='col-auto' ><!-- Criar pedido -->
+          <form class='px-4 py-3' action='create-request.php' method='POST'>
+          <button type='submit' method='POST' name='create-request' class='btn btn-primary'>Criar Pedido</button>
+          </form>
+          </div>
+          ";
         } else {
-            echo "<p>Você está logado</p>
-            <div class='col-auto' ><!-- Criar pedido -->
-                <form class='px-4 py-3' action='create-request.php' method='POST'>
-                <button type='submit' method='POST' name='create-request' class='btn btn-primary'>Criar Pedido</button>
-            </form>
-            </div>
-           ";
+          echo "<p>Você não está logado</p>";
         }
         if(isset($_POST['criar']))
         {
